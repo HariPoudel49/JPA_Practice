@@ -21,6 +21,6 @@ public class Section {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String order;
+	private String sectionOrder;
 	
 }
