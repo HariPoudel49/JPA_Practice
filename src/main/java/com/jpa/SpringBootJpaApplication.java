@@ -16,7 +16,7 @@ public class SpringBootJpaApplication {
 		SpringApplication.run(SpringBootJpaApplication.class, args);
 	}
 	
-	/*@Bean
+	@Bean
 	public CommandLineRunner commandLineRunner(
 			AuthorRepo authorRepo
 	){
@@ -29,5 +29,5 @@ public class SpringBootJpaApplication {
 				.build();
 		authorRepo.save(author);
 		};
-	}*/
+	}
 }

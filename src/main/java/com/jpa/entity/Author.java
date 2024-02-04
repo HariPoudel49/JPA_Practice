@@ -11,9 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -43,6 +41,6 @@ public class Author {
 	private String email;
 	
 	@ManyToMany(mappedBy = "authors")
-	private List<Courses> courses;
+	private List<Course> cours;
 	
 }
