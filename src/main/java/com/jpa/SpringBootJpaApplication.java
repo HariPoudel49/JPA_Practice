@@ -1,7 +1,9 @@
 package com.jpa;
 
 import com.jpa.entity.Author;
+import com.jpa.entity.Video;
 import com.jpa.repo.AuthorRepo;
+import com.jpa.repo.VideoRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,18 +18,24 @@ public class SpringBootJpaApplication {
 		SpringApplication.run(SpringBootJpaApplication.class, args);
 	}
 	
-	@Bean
+//	@Bean
 	public CommandLineRunner commandLineRunner(
-			AuthorRepo authorRepo
+			AuthorRepo authorRepo,
+			VideoRepo videoRepo
 	){
 		return args -> {
-		var author=Author.builder()
+		/*var author=Author.builder()
 				.firstname("Smith")
 				.lastName("poudel")
 				.age(String.valueOf(22))
 				.email("smith@gmail.com")
 				.build();
-		authorRepo.save(author);
+		authorRepo.save(author);*/
+			var video = Video.builder()
+					.name("Nepal")
+					.length(5l)
+					.build();
+			videoRepo.save(video);
 		};
 	}
 }

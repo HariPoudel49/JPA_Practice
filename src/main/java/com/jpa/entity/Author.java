@@ -2,29 +2,26 @@ package com.jpa.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
-
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
+
+@Entity
 @Table(name = "author_tbl")
-public class Author {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class Author extends BaseEntity{
 	
 	@Column(name = "f_name")
 	private String firstname;

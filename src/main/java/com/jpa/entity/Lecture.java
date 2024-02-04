@@ -9,18 +9,18 @@ import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
+import lombok.experimental.SuperBuilder;
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Lecture {
+@SuperBuilder
+public class Lecture extends BaseEntity {
 	
-	@Id
-	@GeneratedValue
-	private Long id;
+	
 	
 	private String name;
 	
