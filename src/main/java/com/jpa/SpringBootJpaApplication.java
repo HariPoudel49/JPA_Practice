@@ -25,7 +25,7 @@ public class SpringBootJpaApplication {
 			VideoRepo videoRepo
 	){
 		return args -> {
-			/*for (int i = 0; i < 50; i++){
+			for (int i = 0; i < 50; i++){
 				Faker faker =new Faker();
 				var author = Author.builder()
 						.firstName(faker.name().firstName())
@@ -34,7 +34,7 @@ public class SpringBootJpaApplication {
 						.email(faker.name().username() + "@gmail.com")
 						.build();
 				authorRepo.save(author);
-		}*/
+		}
 		
 //			update author with ID =2
 			var author = Author.builder()
@@ -57,8 +57,10 @@ public class SpringBootJpaApplication {
 			
 			
 //			update all author age
-			authorRepo.updateAuthorsAge(99);
+//			authorRepo.updateAuthorsAge(99);
 			
+//			// update Author a set a.age=22 where a.id =1
+			authorRepo.updateAuthor(70, 1l);
 
 		};
 	}
