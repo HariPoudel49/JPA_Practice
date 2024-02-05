@@ -1,5 +1,6 @@
 package com.jpa;
 
+import com.github.javafaker.Faker;
 import com.jpa.entity.Author;
 import com.jpa.entity.Video;
 import com.jpa.repo.AuthorRepo;
@@ -18,24 +19,27 @@ public class SpringBootJpaApplication {
 		SpringApplication.run(SpringBootJpaApplication.class, args);
 	}
 	
-//	@Bean
+	@Bean
 	public CommandLineRunner commandLineRunner(
 			AuthorRepo authorRepo,
 			VideoRepo videoRepo
 	){
 		return args -> {
-		/*var author=Author.builder()
-				.firstname("Smith")
-				.lastName("poudel")
-				.age(String.valueOf(22))
-				.email("smith@gmail.com")
-				.build();
-		authorRepo.save(author);*/
-			var video = Video.builder()
+			for (int i = 0; i < 50; i++){
+				Faker faker =new Faker();
+				var author = Author.builder()
+						.firstName(faker.name().firstName())
+						.lastName(faker.name().lastName())
+						.age(String.valueOf(faker.number().numberBetween(15, 45)))
+						.email("smith" +i+ "@gmail.com")
+						.build();
+				authorRepo.save(author);
+		}
+			/*var video = Video.builder()
 					.name("Nepal")
 					.length(5l)
 					.build();
-			videoRepo.save(video);
+			videoRepo.save(video);*/
 		};
 	}
 }

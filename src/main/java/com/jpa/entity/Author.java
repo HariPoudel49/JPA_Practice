@@ -24,7 +24,7 @@ import java.util.List;
 public class Author extends BaseEntity{
 	
 	@Column(name = "f_name")
-	private String firstname;
+	private String firstName;
 	
 	@Column(name = "l_name")
 	private String lastName;
