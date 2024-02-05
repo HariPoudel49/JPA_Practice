@@ -54,6 +54,12 @@ public class SpringBootJpaApplication {
 					.length(5l)
 					.build();
 			videoRepo.save(video);*/
+			
+			
+//			update all author age
+			authorRepo.updateAuthorsAge(99);
+			
+
 		};
 	}
 }
