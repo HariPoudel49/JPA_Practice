@@ -26,5 +26,10 @@ spring:
   # Other configurations...
 ```
 
+#DataBase
+![Screenshot (8)](https://github.com/HariPoudel49/JPA_Practice/assets/85866119/3afd14d3-b7ac-480f-8512-8a5860053231)
+
+
+
 
 
